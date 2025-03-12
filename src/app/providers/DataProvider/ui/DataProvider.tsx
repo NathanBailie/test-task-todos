@@ -7,6 +7,7 @@ import {
     useState,
 } from 'react';
 import { type Task } from '@/shared/types/task';
+import { createTask } from '@/shared/utils/createTask';
 
 interface DataContextType {
     initData: Task[] | undefined;
@@ -14,6 +15,7 @@ interface DataContextType {
     isError: boolean;
     errMessage: string;
     onChangeTaskStatus: (id: string) => void;
+    onAddNewTask: (name: string) => void;
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
@@ -52,12 +54,17 @@ export const DataProvider = ({ children }: DataProviderProps) => {
             });
     }, []);
 
-    const onChangeTaskStatus = (id: string) =>
+    function onChangeTaskStatus(id: string) {
         setInitData(prevData =>
             prevData?.map(task =>
                 task.id === id ? { ...task, isDone: !task.isDone } : task,
             ),
         );
+    }
+
+    function onAddNewTask(name: string) {
+        setInitData(prevData => [...(prevData ?? []), createTask(name)]);
+    }
 
     const value = {
         initData,
@@ -65,6 +72,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
         isError,
         errMessage,
         onChangeTaskStatus,
+        onAddNewTask,
     };
 
     return (

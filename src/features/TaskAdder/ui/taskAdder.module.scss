@@ -1,0 +1,60 @@
+.taskAdder {
+	height: 40px;
+	background: var(--app-bg);
+	border-radius: 3px 3px 0 0;
+	border-bottom: 1px solid var(--tableitem-border-color);
+	padding: 5px 10px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.chevron {
+	position: relative;
+	border: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	cursor: pointer;
+
+	&:hover {
+		&::before {
+			color: var(--chevron-color);
+		}
+	}
+
+	&:active {
+		&::before {
+			color: var(--chevron-active-color);
+		}
+	}
+
+	&::before {
+		position: absolute;
+		content: '‹';
+		transform: rotate(270deg);
+		transform-origin: center center;
+		font-size: 25px;
+		line-height: 25px;
+		top: -10%;
+		right: 38%;
+		color: var(--chevron-color);
+	}
+}
+
+.input {
+	width: 100%;
+	border: none;
+	outline: none;
+	font-size: 18px;
+	color: var(--input-text-color);
+
+	&::placeholder {
+		color: #F0F0F0;
+	}
+}

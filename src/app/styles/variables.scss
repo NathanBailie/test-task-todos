@@ -1,6 +1,6 @@
 :root {
 	/* sizes */
-	--app-width: 900px;
+	--app-width: 500px;
 
 	/* Font families */
 	--font-regular: "Helvetica Neue Roman";
@@ -8,11 +8,12 @@
 	--font-italic: "Helvetica Neue Italic";
 
 	/* Font sizes */
-	--font-size-title: 115px;
+	--font-size-title: 70px;
 	--font-size-task: 18px;
 
 	/* Colors */
-	--app-bg: #fafafa;
+	--page-bg: #F5F5F5;
+	--app-bg: #FEFEFE;
 	--title-color: #E6DBD9;
 	--checkbox-inactive-border: #F0F0F0;
 	--checkbox-active-border: #D4DEDD;
@@ -20,4 +21,7 @@
 	--tableitem-border-color: #EDEDED;
 	--task-active-color: #555;
 	--task-done-color: #D5D5D5;
+	--chevron-color: #c9c9c9;
+	--chevron-active-color: #E8E8E8;
+	--input-text-color: #6a6a6a;
 }
