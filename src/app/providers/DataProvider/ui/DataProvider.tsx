@@ -23,6 +23,11 @@ interface DataContextType {
     setActiveFilter: (value: FilterNames) => void;
     onFilterTasks: (data: Task[]) => Task[];
     onClearCompleted: () => void;
+    onChangeIsOpenStatusAndValue: (
+        id: string,
+        value: string,
+        flag?: boolean,
+    ) => void;
 }
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
@@ -94,6 +99,20 @@ export const DataProvider = ({ children }: DataProviderProps) => {
         });
     }
 
+    function onChangeIsOpenStatusAndValue(
+        id: string,
+        value: string,
+        flag = false,
+    ) {
+        setInitData(prevData =>
+            prevData?.map(item =>
+                item.id !== id
+                    ? { ...item, isOpen: false }
+                    : { ...item, isOpen: flag, name: value },
+            ),
+        );
+    }
+
     function onClearCompleted() {
         setInitData(prevTasks => prevTasks?.filter(task => !task.isDone));
     }
@@ -111,6 +130,7 @@ export const DataProvider = ({ children }: DataProviderProps) => {
         setActiveFilter,
         onFilterTasks,
         onClearCompleted,
+        onChangeIsOpenStatusAndValue,
     };
 
     return (

@@ -35,7 +35,7 @@ export const TaskAdder = () => {
                 className={cls.input}
                 value={taskText}
                 onChange={e => setTaskText(e.target.value)}
-                onKeyDown={handleKeyDown} // Обрабатываем нажатие Enter
+                onKeyDown={handleKeyDown}
             />
         </div>
     );

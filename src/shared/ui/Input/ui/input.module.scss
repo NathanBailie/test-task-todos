@@ -1,0 +1,9 @@
+.input {
+	width: 100%;
+	font-size: var(--font-size-task);
+	color: var(--task-active-color);
+	outline: 1px solid var(--filter-btn-border-color);
+	border-radius: 6px;
+	border: none;
+	padding: 5px;
+}

@@ -5,4 +5,5 @@ export const createTask = (name: string, isDone = false): Task => ({
     name,
     id: uuid(),
     isDone,
+    isOpen: false,
 });

@@ -9,8 +9,14 @@ export const TaskTable = () => {
 
     const filteredData: Task[] = onFilterTasks(initData);
 
-    const items = filteredData.map(({ name, id, isDone }) => (
-        <TaskItem key={id} name={name} id={id} isDone={isDone} />
+    const items = filteredData.map(({ name, id, isDone, isOpen }) => (
+        <TaskItem
+            key={id}
+            name={name}
+            id={id}
+            isDone={isDone}
+            isOpen={isOpen}
+        />
     ));
 
     return <div className={cls.taskTable}>{items}</div>;
