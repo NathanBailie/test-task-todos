@@ -30,8 +30,8 @@ npm run start:vite - launch the project using Vite
 
 ## Scripts
 
-- `npm run start` - Launch the frontend project on the Webpack dev server on port 3000
-- `npm run start:vite` - Launch the frontend project using Vite
+- `npm run start` - Launch the frontend project using Vite
+- `npm run start:webpack` - Launch the frontend project on the Webpack dev server on port 3000
 - `npm run build:dev` - Build the project in development mode using Webpack
 - `npm run build:prod` - Build the project in production mode using Webpack
 - `npm run lint:ts` - Run ESLint to check TypeScript and TSX files for linting issues
