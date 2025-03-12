@@ -8,7 +8,16 @@ body {
 
 .app {
 	max-width: var(--app-width);
+	width: 100%;
 	margin: 0 auto;
 	padding: 16px;
 	font-family: Helvetica, arial, sans-serif;
+}
+
+.button {
+	color: var(--filters-color);
+	font-size: var(--font-size-filter);
+	background: transparent;
+	cursor: pointer;
+	transition: 0.1s ease all;
 }

@@ -1,5 +1,5 @@
 import cls from './taskItem.module.scss';
-import { Task } from '@/shared/types/task';
+import { Task } from '@/shared/types/main';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Checkbox } from '@/shared/ui/Checkbox/Checkbox';
 

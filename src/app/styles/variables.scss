@@ -1,6 +1,6 @@
 :root {
 	/* sizes */
-	--app-width: 500px;
+	--app-width: 700px;
 
 	/* Font families */
 	--font-regular: "Helvetica Neue Roman";
@@ -10,6 +10,7 @@
 	/* Font sizes */
 	--font-size-title: 70px;
 	--font-size-task: 18px;
+	--font-size-filter: 14px;
 
 	/* Colors */
 	--page-bg: #F5F5F5;
@@ -24,4 +25,6 @@
 	--chevron-color: #c9c9c9;
 	--chevron-active-color: #E8E8E8;
 	--input-text-color: #6a6a6a;
+	--filters-color: #7A7A7A;
+	--filter-btn-border-color: #E2DBDB;
 }

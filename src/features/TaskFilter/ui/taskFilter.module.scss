@@ -1,0 +1,28 @@
+.taskFilter {
+	min-height: 40px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 15px;
+	flex-wrap: wrap;
+	padding: 5px 10px;
+	background: var(--app-bg);
+
+
+	span,
+	.clearBtn {
+		color: var(--filters-color);
+		font-size: var(--font-size-filter);
+	}
+}
+
+.clearBtn {
+	background: transparent;
+	cursor: pointer;
+	border: 1px solid var(--app-bg);
+
+	&:hover {
+		border: 1px solid var(--filter-btn-border-color);
+		transform: scale(1.01)
+	}
+}

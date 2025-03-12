@@ -25,6 +25,7 @@ export const TaskAdder = () => {
                 type="button"
                 className={cls.chevron}
                 onClick={taskAddHandler}
+                title="Add new task"
             >
                 {}
             </button>

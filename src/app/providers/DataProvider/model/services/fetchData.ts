@@ -1,5 +1,5 @@
 import { getTasksWithRandomChance } from '../lib/getTasksWithRandomChance';
-import { Task } from '@/shared/types/task';
+import { Task } from '@/shared/types/main';
 
 export const fetchData = async (): Promise<Task[]> => {
     try {

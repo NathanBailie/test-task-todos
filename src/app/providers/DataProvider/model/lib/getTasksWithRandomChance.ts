@@ -1,5 +1,5 @@
 import { initTasks } from './mockedData';
-import { Task } from '@/shared/types/task';
+import { Task } from '@/shared/types/main';
 
 export function getTasksWithRandomChance(): Promise<Task[]> {
     return new Promise((resolve, reject) => {

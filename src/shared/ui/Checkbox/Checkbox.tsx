@@ -18,6 +18,7 @@ export const Checkbox = (props: CheckboxProps) => {
             className={classNames(cls.checkbox, {
                 [cls.checkbox_active]: isDone,
             })}
+            title={isDone ? 'Check as active' : 'Check as done'}
             onClick={() => onChangeTaskStatus(id)}
         >
             <input type="checkbox" checked={isDone} readOnly />

@@ -1,0 +1,18 @@
+.statusFilters {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
+	flex-wrap: wrap;
+}
+
+.statusFilter {
+	background: transparent;
+	cursor: pointer;
+	border-radius: 6px;
+	border: 1px solid var(--app-bg);
+
+	&_active {
+		border: 1px solid var(--filter-btn-border-color);
+	}
+}
