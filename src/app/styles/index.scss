@@ -2,11 +2,12 @@
 @import url("./fonts.scss");
 @import url("./reset.scss");
 
-* {
-	font-family: var(--font-primary);
+body {
+	background-color: var(--app-bg);
 }
 
 .app {
 	margin: 0 auto;
-	padding: 0 16px;
+	padding: 16px;
+	font-family: Helvetica, arial, sans-serif;
 }

@@ -1,20 +1,13 @@
 :root {
 	/* Font families */
-	--font-primary: "Helvetica Neue", arial, sans-serif;
+	--font-regular: "Helvetica Neue Roman";
+	--font-thin: "Helvetica Neue Thin";
+	--font-italic: "Helvetica Neue Italic";
 
 	/* Font sizes */
-	--font-size-title: 80px;
-	--font-size-input: 18px;
-	--font-size-task: 24px;
-	--font-size-filter: 14px;
-	--font-size-counter: 12px;
+	--font-size-title: 115px;
 
 	/* Colors */
-	--color-primary: #4d4d4d;
-	--color-secondary: #777;
-	--color-placeholder: rgb(77 77 77 / 30%);
-	--color-completed: #d9d9d9;
-	--color-border: #e6e6e6;
-	--color-background: #f5f5f5;
-	--color-button-hover: #d0d0d0;
+	--app-bg: #fafafa;
+	--title-color: #E6DBD9;
 }

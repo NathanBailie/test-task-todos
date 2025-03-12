@@ -1,5 +1,10 @@
 import { memo } from 'react';
+import { MainTitle } from '@/entities/MainTitle';
 
-const App = memo(() => <h1>Launched!</h1>);
+const App = memo(() => (
+    <div className="app">
+        <MainTitle />
+    </div>
+));
 
 export default App;

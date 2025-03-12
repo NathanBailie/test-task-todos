@@ -1,4 +1,14 @@
 @font-face {
-	font-family: HelveticaNeue;
+	font-family: 'Helvetica Neue Roman';
 	src: url('@/shared/assets/fonts/HelveticaNeue-Roman.otf');
+}
+
+@font-face {
+	font-family: 'Helvetica Neue Thin';
+	src: url('@/shared/assets/fonts/HelveticaNeueCyr-Thin.otf');
+}
+
+@font-face {
+	font-family: 'Helvetica Neue Italic';
+	src: url('@/shared/assets/fonts/HelveticaNeueCyr-Italic.otf');
 }
