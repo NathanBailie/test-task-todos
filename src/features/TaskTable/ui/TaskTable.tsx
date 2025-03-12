@@ -45,7 +45,13 @@ export const TaskTable = () => {
                         <input type="checkbox" checked={isDone} readOnly />
                         <label />
                     </div>
-                    <span>{name}</span>
+                    <span
+                        className={classNames(cls.text, {
+                            [cls.text_done]: isDone,
+                        })}
+                    >
+                        {name}
+                    </span>
                 </div>
             ))}
         </div>

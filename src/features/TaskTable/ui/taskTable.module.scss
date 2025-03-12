@@ -59,3 +59,15 @@ label {
 		}
 	}
 }
+
+.text {
+	font-size: var(--font-size-task);
+	color: var(--task-active-color);
+	transition: 0.3s all ease;
+
+	&_done {
+		color: var(--task-done-color);
+		text-decoration: line-through;
+		text-decoration-color: var(--task-done-color);
+	}
+}
