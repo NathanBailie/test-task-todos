@@ -9,49 +9,7 @@
 	gap: 10px;
 }
 
-.checkbox input {
-	display: none;
-}
 
-label {
-	position: relative;
-	user-select: none;
-}
-
-.checkbox {
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-
-	label {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		cursor: pointer;
-	}
-
-	label::before {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		width: 20px;
-		height: 20px;
-		border: 1px solid var(--checkbox-inactive-border);
-		border-radius: 50%;
-		transition: all 0.3s;
-		content: '\2714';
-		color: #fff;
-
-	}
-
-	&_active {
-		label::before {
-			border: 1px solid var(--checkbox-active-border);
-			color: var(--checkbox-checkmark-color);
-		}
-	}
-}
 
 
 .text {
