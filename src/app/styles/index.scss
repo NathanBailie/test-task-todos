@@ -1,1 +1,12 @@
-@use "./reset";
+@import url("./variables.scss");
+@import url("./fonts.scss");
+@import url("./reset.scss");
+
+* {
+	font-family: var(--font-primary);
+}
+
+.app {
+	margin: 0 auto;
+	padding: 0 16px;
+}
