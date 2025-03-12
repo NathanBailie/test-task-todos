@@ -1,0 +1,61 @@
+.taskTable {
+	margin: 0 auto;
+	max-width: var(--app-width);
+	width: 100%;
+}
+
+.checkbox input {
+	display: none;
+}
+
+.tableItem {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	border: 1px solid var(--tableitem-border-color);
+	min-height: 40px;
+	height: 100%;
+	padding: 5px 10px;
+	gap: 10px;
+}
+
+label {
+	position: relative;
+	user-select: none;
+	border: 1px solid black;
+}
+
+.checkbox {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	label {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	label::before {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 20px;
+		height: 20px;
+		border: 1px solid var(--checkbox-inactive-border);
+		border-radius: 50%;
+		transition: all 0.3s;
+		content: '\2714';
+		color: #fff;
+
+	}
+
+	&_active {
+		label::before {
+			border: 1px solid var(--checkbox-active-border);
+			color: var(--checkbox-checkmark-color);
+		}
+	}
+}

@@ -1,4 +1,7 @@
 :root {
+	/* sizes */
+	--app-width: 900px;
+
 	/* Font families */
 	--font-regular: "Helvetica Neue Roman";
 	--font-thin: "Helvetica Neue Thin";
@@ -10,4 +13,8 @@
 	/* Colors */
 	--app-bg: #fafafa;
 	--title-color: #E6DBD9;
+	--checkbox-inactive-border: #F0F0F0;
+	--checkbox-active-border: #D4DEDD;
+	--checkbox-checkmark-color: #8ABAAE;
+	--tableitem-border-color: #EDEDED;
 }
