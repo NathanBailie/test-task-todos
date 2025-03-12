@@ -1,36 +1,13 @@
 import cls from './taskTable.module.scss';
-import { useState } from 'react';
 import { TaskItem } from '@/entities/TaskItem';
-import { Task } from '@/shared/types/task';
-import { createTask } from '@/shared/utils/createTask';
-
-const initialTasks: Task[] = [
-    createTask('task1', true),
-    createTask('task2', true),
-    createTask('task3', true),
-];
+import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
 
 export const TaskTable = () => {
-    const [tasks, setTasks] = useState<Task[]>(initialTasks);
+    const { initData } = useData();
 
-    const onChangeTaskStatus = (id: string) =>
-        setTasks(
-            tasks.map(task =>
-                task.id === id ? { ...task, isDone: !task.isDone } : task,
-            ),
-        );
+    const items = initData?.map(({ name, id, isDone }) => (
+        <TaskItem key={id} name={name} id={id} isDone={isDone} />
+    ));
 
-    return (
-        <div className={cls.taskTable}>
-            {tasks.map(({ name, id, isDone }) => (
-                <TaskItem
-                    key={id}
-                    name={name}
-                    id={id}
-                    isDone={isDone}
-                    onChangeTaskStatus={onChangeTaskStatus}
-                />
-            ))}
-        </div>
-    );
+    return <div className={cls.taskTable}>{items}</div>;
 };
