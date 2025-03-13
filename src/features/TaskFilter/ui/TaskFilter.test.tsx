@@ -1,6 +1,7 @@
 import { TaskFilter } from './TaskFilter';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
+import { onClearCompleted } from '@/app/providers/DataProvider';
 import '@testing-library/jest-dom';
 
 jest.mock('@/app/providers/DataProvider/ui/DataProvider', () => ({
@@ -15,13 +16,23 @@ jest.mock('@/widgets/StatusFilters', () => ({
     StatusFilters: jest.fn(() => <div>Status Filters</div>),
 }));
 
+jest.mock('@/app/providers/DataProvider', () => ({
+    onClearCompleted: jest.fn(),
+}));
+
 describe('TaskFilter', () => {
-    const onClearCompletedMock = jest.fn();
+    let onClearCompletedMock: jest.Mock;
+    let setInitDataMock: jest.Mock;
 
     beforeEach(() => {
+        onClearCompletedMock = jest.fn();
+        setInitDataMock = jest.fn();
         (useData as jest.Mock).mockReturnValue({
-            onClearCompleted: onClearCompletedMock,
+            setInitData: setInitDataMock,
         });
+        (onClearCompleted as jest.Mock).mockImplementation(
+            onClearCompletedMock,
+        );
         render(<TaskFilter />);
     });
 
@@ -36,6 +47,7 @@ describe('TaskFilter', () => {
         });
         fireEvent.click(clearButton);
         expect(onClearCompletedMock).toHaveBeenCalledTimes(1);
+        expect(onClearCompletedMock).toHaveBeenCalledWith(setInitDataMock);
     });
 
     test('should render the "Clear Completed" button', () => {

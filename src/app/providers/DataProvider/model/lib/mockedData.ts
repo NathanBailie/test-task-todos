@@ -13,3 +13,9 @@ export const initFilters: Filter[] = [
     createFilter('Active'),
     createFilter('Completed'),
 ];
+
+export const testMockedData: Task[] = [
+    { name: 'Task1', id: '1', isDone: false, isOpen: false },
+    { name: 'Task2', id: '2', isDone: false, isOpen: false },
+    { name: 'Task3', id: '3', isDone: false, isOpen: false },
+];

@@ -18,7 +18,7 @@ export const Text = (props: TextProps) => {
     return (
         <span
             className={classNames(cls.text, mods, [])}
-            onClick={() => onClickCallback(id, text, true)}
+            onClick={() => onClickCallback()}
         >
             {text}
         </span>

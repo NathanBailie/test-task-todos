@@ -1,15 +1,17 @@
 import cls from './input.module.scss';
 import { useEffect, useRef, useState } from 'react';
+import { Task } from '@/shared/types/main';
 
 interface InputProps {
     id: string;
     value: string;
     onBLurCallback: (...args: any[]) => void;
     type?: string;
+    setInitData: React.Dispatch<React.SetStateAction<Task[] | undefined>>;
 }
 
 export const Input = (props: InputProps) => {
-    const { id, value, onBLurCallback, type = 'text' } = props;
+    const { id, value, onBLurCallback, type = 'text', setInitData } = props;
     const [text, setText] = useState<string>('');
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -24,7 +26,7 @@ export const Input = (props: InputProps) => {
         id: string,
     ) {
         if (e.key === 'Enter') {
-            onBLurCallback(id, text);
+            onBLurCallback(id, text, setInitData);
         }
     }
 
@@ -32,9 +34,9 @@ export const Input = (props: InputProps) => {
         <input
             ref={inputRef}
             key={id}
-            type="text"
+            type={type}
             value={text}
-            onBlur={() => onBLurCallback(id, text)}
+            onBlur={() => onBLurCallback(id, text, setInitData)}
             onKeyDown={e => handleKeyDown(e, id)}
             className={cls.input}
             onChange={e => setText(e.target.value)}

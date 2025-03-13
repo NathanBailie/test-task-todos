@@ -1,20 +1,28 @@
 import { TaskAdder } from './TaskAdder';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
+import { onAddNewTask } from '@/app/providers/DataProvider';
 import '@testing-library/jest-dom';
 
 jest.mock('@/app/providers/DataProvider/ui/DataProvider', () => ({
     useData: jest.fn(),
 }));
 
+jest.mock('@/app/providers/DataProvider', () => ({
+    onAddNewTask: jest.fn(),
+}));
+
 describe('Tests for TaskAdder', () => {
     let onAddNewTaskMock: jest.Mock;
+    let setInitDataMock: jest.Mock;
 
     beforeEach(() => {
         onAddNewTaskMock = jest.fn();
+        setInitDataMock = jest.fn();
         (useData as jest.Mock).mockReturnValue({
-            onAddNewTask: onAddNewTaskMock,
+            setInitData: setInitDataMock,
         });
+        (onAddNewTask as jest.Mock).mockImplementation(onAddNewTaskMock);
     });
 
     test('should render input and button', () => {
@@ -35,7 +43,10 @@ describe('Tests for TaskAdder', () => {
         fireEvent.change(input, { target: { value: 'New Task' } });
         fireEvent.click(button);
 
-        expect(onAddNewTaskMock).toHaveBeenCalledWith('New Task');
+        expect(onAddNewTaskMock).toHaveBeenCalledWith(
+            'New Task',
+            setInitDataMock,
+        );
         expect(input).toHaveValue('');
     });
 
@@ -47,7 +58,10 @@ describe('Tests for TaskAdder', () => {
         fireEvent.change(input, { target: { value: 'New Task' } });
         fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', charCode: 13 });
 
-        expect(onAddNewTaskMock).toHaveBeenCalledWith('New Task');
+        expect(onAddNewTaskMock).toHaveBeenCalledWith(
+            'New Task',
+            setInitDataMock,
+        );
         expect(input).toHaveValue('');
     });
 

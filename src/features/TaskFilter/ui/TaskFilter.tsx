@@ -1,10 +1,11 @@
 import cls from './taskFilter.module.scss';
+import { onClearCompleted } from '@/app/providers/DataProvider';
 import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
 import { ActiveTaskCounter } from '@/widgets/ActiveTaskCounter';
 import { StatusFilters } from '@/widgets/StatusFilters';
 
 export const TaskFilter = () => {
-    const { onClearCompleted } = useData();
+    const { setInitData } = useData();
 
     return (
         <div className={cls.taskFilter}>
@@ -14,7 +15,7 @@ export const TaskFilter = () => {
                 type="button"
                 value="Clear Completed"
                 className={cls.clearBtn}
-                onClick={() => onClearCompleted()}
+                onClick={() => onClearCompleted(setInitData)}
             />
         </div>
     );

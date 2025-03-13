@@ -1,6 +1,7 @@
 import { StatusFilters } from './StatusFilters';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
+import { onChangeFilter } from '@/app/providers/DataProvider';
 import '@testing-library/jest-dom';
 import { initFilters } from '@/app/providers/DataProvider/model/lib/mockedData';
 
@@ -8,15 +9,25 @@ jest.mock('@/app/providers/DataProvider/ui/DataProvider', () => ({
     useData: jest.fn(),
 }));
 
+jest.mock('@/app/providers/DataProvider', () => ({
+    onChangeFilter: jest.fn(),
+}));
+
 describe('Tests for StatusFilters', () => {
     let onChangeFilterMock: jest.Mock;
+    let setFiltersMock: jest.Mock;
+    let setActiveFilterMock: jest.Mock;
 
     beforeEach(() => {
         onChangeFilterMock = jest.fn();
+        setFiltersMock = jest.fn();
+        setActiveFilterMock = jest.fn();
         (useData as jest.Mock).mockReturnValue({
             filters: initFilters,
-            onChangeFilter: onChangeFilterMock,
+            setFilters: setFiltersMock,
+            setActiveFilter: setActiveFilterMock,
         });
+        (onChangeFilter as jest.Mock).mockImplementation(onChangeFilterMock);
     });
 
     it('should render all filters', () => {
@@ -48,6 +59,8 @@ describe('Tests for StatusFilters', () => {
         expect(onChangeFilterMock).toHaveBeenCalledWith(
             expect.any(String),
             'Active',
+            setFiltersMock,
+            setActiveFilterMock,
         );
     });
 });

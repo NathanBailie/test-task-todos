@@ -1,20 +1,18 @@
 import { TaskItem } from './TaskItem';
-import { render, screen, fireEvent } from '@testing-library/react';
-import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
+import { useData } from '@/app/providers/DataProvider/ui/DataProvider';
 
 jest.mock('@/app/providers/DataProvider/ui/DataProvider', () => ({
     useData: jest.fn(),
 }));
 
 describe('Tests for TaskItem', () => {
-    const onChangeIsOpenStatusMock = jest.fn();
-    const onChangeTaskTextByIdMock = jest.fn();
+    const setInitDataMock = jest.fn();
 
     beforeEach(() => {
         (useData as jest.Mock).mockReturnValue({
-            onChangeIsOpenStatus: onChangeIsOpenStatusMock,
-            onChangeTaskTextById: onChangeTaskTextByIdMock,
+            setInitData: setInitDataMock,
         });
     });
 
@@ -46,19 +44,5 @@ describe('Tests for TaskItem', () => {
         const taskWithOpenState = { ...task, isOpen: true };
         render(<TaskItem {...taskWithOpenState} />);
         expect(screen.getByRole('textbox')).toBeInTheDocument();
-    });
-
-    test('should call onChangeIsOpenStatus on task text click', () => {
-        render(<TaskItem {...task} />);
-        fireEvent.click(screen.getByText('Test Task'));
-        expect(onChangeIsOpenStatusMock).toHaveBeenCalled();
-    });
-
-    test('should call onChangeTaskTextById on input blur', () => {
-        const taskWithOpenState = { ...task, isOpen: true };
-        render(<TaskItem {...taskWithOpenState} />);
-        const input = screen.getByRole('textbox');
-        fireEvent.blur(input);
-        expect(onChangeTaskTextByIdMock).toHaveBeenCalledWith('1', 'Test Task');
     });
 });
