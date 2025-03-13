@@ -7,7 +7,7 @@ import {
     useEffect,
     useState,
 } from 'react';
-import { Filter, FilterNames, type Task } from '@/shared/types/main';
+import { Filter, FilterNames, SetState, type Task } from '@/shared/types/main';
 // import { createTask } from '@/shared/utils/createTask/createTask';
 
 export interface DataContextType {
@@ -15,14 +15,14 @@ export interface DataContextType {
     isLoading: boolean;
     isError: boolean;
     errMessage: string;
-    setInitData: React.Dispatch<React.SetStateAction<Task[] | undefined>>;
-    setFilters: React.Dispatch<React.SetStateAction<Filter[]>>;
+    setInitData: SetState<Task[] | undefined>;
+    setFilters: SetState<Filter[]>;
     // onChangeTaskStatus: (id: string) => void;
     // onAddNewTask: (name: string) => void;
     filters: Filter[];
     // onChangeFilter: (id: string, filterName: FilterNames) => void;
     activeFilter: FilterNames;
-    setActiveFilter: React.Dispatch<React.SetStateAction<FilterNames>>;
+    setActiveFilter: SetState<FilterNames>;
     // onFilterTasks: (data: Task[]) => Task[];
     // onClearCompleted: () => void;
     // onChangeIsOpenStatus: (id: string) => void;

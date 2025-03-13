@@ -1,11 +1,9 @@
 import { onChangeTaskStatus } from '../model/handlers/handlers';
 import { testMockedData } from '../model/lib/mockedData';
-import { Task } from '@/shared/types/main';
+import { SetState, Task } from '@/shared/types/main';
 
 describe('onChangeTaskStatus function', () => {
-    let setInitData: jest.Mock<
-        React.Dispatch<React.SetStateAction<Task[] | undefined>>
-    >;
+    let setInitData: jest.Mock<SetState<Task[] | undefined>>;
     let initData: Task[];
 
     beforeEach(() => {
@@ -19,9 +17,9 @@ describe('onChangeTaskStatus function', () => {
         expect(setInitData).toHaveBeenCalledWith(expect.any(Function));
 
         const updater = setInitData.mock.calls[0][0];
-        const updatedData = updater(initData) as Task[]; // Явно указываем, что это Task[]
+        const updatedData = updater(initData) as Task[];
 
-        const updatedTask = updatedData.find((task: Task) => task.id === '2'); // Явно указываем тип Task
+        const updatedTask = updatedData.find((task: Task) => task.id === '2');
         expect(updatedTask).toBeDefined();
         expect(updatedTask?.isDone).toBe(true);
     });

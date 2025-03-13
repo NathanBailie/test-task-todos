@@ -12,3 +12,5 @@ export interface Filter {
     id: string;
     active: boolean;
 }
+
+export type SetState<T> = React.Dispatch<React.SetStateAction<T>>;

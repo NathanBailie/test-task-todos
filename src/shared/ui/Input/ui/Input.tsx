@@ -1,13 +1,13 @@
 import cls from './input.module.scss';
 import { useEffect, useRef, useState } from 'react';
-import { Task } from '@/shared/types/main';
+import { SetState, Task } from '@/shared/types/main';
 
 export interface InputProps {
     id: string;
     value: string;
     onBLurCallback: (...args: any[]) => void;
     type?: string;
-    setInitData: React.Dispatch<React.SetStateAction<Task[] | undefined>>;
+    setInitData: SetState<Task[] | undefined>;
 }
 
 export const Input = (props: InputProps) => {

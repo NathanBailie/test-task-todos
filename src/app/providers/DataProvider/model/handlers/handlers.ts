@@ -1,7 +1,5 @@
-import { Filter, FilterNames, Task } from '@/shared/types/main';
+import { Filter, FilterNames, SetState, Task } from '@/shared/types/main';
 import { createTask } from '@/shared/utils/createTask/createTask';
-
-type SetState<T> = React.Dispatch<React.SetStateAction<T>>;
 
 export const onChangeTaskStatus = (
     id: string,

@@ -1,12 +1,12 @@
 import { Input, InputProps } from './Input';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import { Task } from '@/shared/types/main';
+import { SetState, Task } from '@/shared/types/main';
 
 describe('Tests for Input', () => {
     const mockOnBlurCallback = jest.fn();
     const mockSetInitData = jest.fn<
-        React.Dispatch<React.SetStateAction<Task[] | undefined>>,
+        SetState<Task[] | undefined>,
         [React.SetStateAction<Task[] | undefined>]
     >();
 
