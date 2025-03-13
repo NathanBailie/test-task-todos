@@ -2,7 +2,7 @@ import cls from './input.module.scss';
 import { useEffect, useRef, useState } from 'react';
 import { Task } from '@/shared/types/main';
 
-interface InputProps {
+export interface InputProps {
     id: string;
     value: string;
     onBLurCallback: (...args: any[]) => void;

@@ -12,7 +12,7 @@ jest.mock('@/app/providers/DataProvider', () => ({
     onChangeTaskStatus: jest.fn(),
 }));
 
-describe('Checkbox', () => {
+describe('Tests for Checkbox', () => {
     let onChangeTaskStatusMock: jest.Mock;
     let setInitDataMock: jest.Mock;
 
