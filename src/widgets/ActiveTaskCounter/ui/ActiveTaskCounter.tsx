@@ -5,9 +5,11 @@ export const ActiveTaskCounter = () => {
     const { initData } = useData();
     const activeItems = initData?.filter(task => !task.isDone).length || 0;
 
+    const itemText = activeItems === 1 ? 'item' : 'items';
+
     return (
         <span className={cls.activeTaskCounter}>
-            {`${activeItems} item${activeItems > 1 ? 's' : ''} left`}
+            {`${activeItems} ${itemText} left`}
         </span>
     );
 };
