@@ -47,10 +47,13 @@ describe('TaskTable', () => {
         (useData as jest.Mock).mockReturnValueOnce({
             initData: undefined,
             activeFilter: 'all',
+            isError: false,
+            errMessage: '',
         });
 
         const { container } = render(<TaskTable />);
 
-        expect(container.firstChild).toBeNull();
+        // Теперь проверяем, что компонент рендерит Spinner, если нет данных
+        expect(container.querySelector('.loader')).toBeInTheDocument();
     });
 });
