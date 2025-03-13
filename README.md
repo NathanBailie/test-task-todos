@@ -31,6 +31,12 @@ Test task for the Frontend Developer position.
 
 ---
 
+## Project website
+
+### You can watch this project here - [click](https://nathanbailie.github.io/test-task-todos/ 'Click to visit the project website')
+
+---
+
 ## Project launch
 
 ```
