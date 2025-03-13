@@ -1,8 +1,8 @@
-import { onChangeTaskStatus } from '../model/handlers/handlers';
-import { testMockedData } from '../model/lib/mockedData';
+import { onChangeTaskStatus } from '../handlers';
+import { testMockedData } from '../../lib/mockedData';
 import { SetState, Task } from '@/shared/types/main';
 
-describe('onChangeTaskStatus function', () => {
+describe('Tests for onChangeTaskStatus', () => {
     let setInitData: jest.Mock<SetState<Task[] | undefined>>;
     let initData: Task[];
 
