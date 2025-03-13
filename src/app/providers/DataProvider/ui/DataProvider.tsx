@@ -11,7 +11,6 @@ import { Filter, FilterNames, SetState, type Task } from '@/shared/types/main';
 
 export interface DataContextType {
     initData: Task[] | undefined;
-    isLoading: boolean;
     isError: boolean;
     errMessage: string;
     setInitData: SetState<Task[] | undefined>;
@@ -38,14 +37,11 @@ interface DataProviderProps {
 export const DataProvider = ({ children }: DataProviderProps) => {
     const [initData, setInitData] = useState<Task[] | undefined>();
     const [filters, setFilters] = useState<Filter[]>(initFilters);
-    const [isLoading, setIsLoading] = useState<boolean>(false);
     const [isError, setIsError] = useState<boolean>(false);
     const [errMessage, setErrMessage] = useState<string>('');
     const [activeFilter, setActiveFilter] = useState<FilterNames>('All');
 
     useEffect(() => {
-        setIsLoading(true);
-
         fetchData()
             .then(data => {
                 setInitData(data);
@@ -53,15 +49,11 @@ export const DataProvider = ({ children }: DataProviderProps) => {
             .catch((err: Error) => {
                 setIsError(true);
                 setErrMessage(err.message);
-            })
-            .finally(() => {
-                setIsLoading(false);
             });
     }, []);
 
     const value = {
         initData,
-        isLoading,
         isError,
         errMessage,
         filters,

@@ -1,0 +1,19 @@
+.errorMessage {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+
+	h2 {
+		font-size: var(--font-size-task);
+		color: var(--error-msg-color);
+	}
+
+	p {
+		font-size: var(--font-size-filter);
+		font-family: var(--font-italic);
+		color: var(--error-msg-color);
+	}
+}
