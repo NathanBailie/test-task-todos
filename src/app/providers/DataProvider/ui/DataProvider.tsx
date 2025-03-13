@@ -8,7 +8,7 @@ import {
     useState,
 } from 'react';
 import { Filter, FilterNames, type Task } from '@/shared/types/main';
-import { createTask } from '@/shared/utils/createTask';
+import { createTask } from '@/shared/utils/createTask/createTask';
 
 interface DataContextType {
     initData: Task[] | undefined;

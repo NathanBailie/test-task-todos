@@ -1,6 +1,6 @@
 import type { Filter, Task } from '@/shared/types/main';
-import { createFilter } from '@/shared/utils/createFilter';
-import { createTask } from '@/shared/utils/createTask';
+import { createFilter } from '@/shared/utils/createFilter/createFilter';
+import { createTask } from '@/shared/utils/createTask/createTask';
 
 export const initTasks: Task[] = [
     createTask('task1'),
