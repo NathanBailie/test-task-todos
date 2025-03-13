@@ -1,7 +1,7 @@
 import cls from './Text.module.scss';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 
-interface TextProps {
+export interface TextProps {
     id: string;
     text: string;
     isDone: boolean;
@@ -17,6 +17,7 @@ export const Text = (props: TextProps) => {
 
     return (
         <span
+            id={id}
             className={classNames(cls.text, mods, [])}
             onClick={() => onClickCallback()}
         >
