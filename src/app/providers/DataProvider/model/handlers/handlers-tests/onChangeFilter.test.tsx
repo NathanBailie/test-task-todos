@@ -2,7 +2,7 @@ import { onChangeFilter } from '../handlers';
 import { testMockedFilters } from '../../lib/mockedData';
 import { SetState, Filter, FilterNames } from '@/shared/types/main';
 
-describe('onChangeFilter function', () => {
+describe('Tests for onChangeFilter', () => {
     let setFilters: jest.Mock<SetState<Filter[]>>;
     let setActiveFilter: jest.Mock<SetState<FilterNames>>;
     let initFilters: Filter[];
