@@ -19,3 +19,9 @@ export const testMockedData: Task[] = [
     { name: 'Task2', id: '2', isDone: false, isOpen: false },
     { name: 'Task3', id: '3', isDone: false, isOpen: false },
 ];
+
+export const testMockedFilters: Filter[] = [
+    { value: 'All', id: '1', active: true },
+    { value: 'Active', id: '3', active: false },
+    { value: 'Completed', id: '2', active: false },
+];
