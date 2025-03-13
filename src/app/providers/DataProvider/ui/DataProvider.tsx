@@ -10,7 +10,7 @@ import {
 import { Filter, FilterNames, type Task } from '@/shared/types/main';
 import { createTask } from '@/shared/utils/createTask/createTask';
 
-interface DataContextType {
+export interface DataContextType {
     initData: Task[] | undefined;
     isLoading: boolean;
     isError: boolean;

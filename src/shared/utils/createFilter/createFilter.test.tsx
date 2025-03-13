@@ -1,5 +1,5 @@
 import { createFilter } from './createFilter';
-import { FilterNames } from '../../types/main';
+import { FilterNames } from '@/shared/types/main';
 
 describe('Tests for createFilter', () => {
     test('Should create a filter with correct values', () => {

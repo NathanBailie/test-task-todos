@@ -1,5 +1,5 @@
 import { createTask } from './createTask';
-import { type Task } from '../../types/main';
+import { type Task } from '@/shared/types/main';
 
 describe('createTask', () => {
     test('Should create a task with correct name and default isDone and isOpen values', () => {

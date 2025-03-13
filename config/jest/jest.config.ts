@@ -36,6 +36,7 @@ const config: Config = {
     ],
     moduleNameMapper: {
         '^@/(.*)$': '<rootDir>/src/$1',
+        '\\.s?css$': 'identity-obj-proxy',
     },
 
     // All imported modules in your tests should be mocked automatically
