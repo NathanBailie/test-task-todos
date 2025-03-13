@@ -2,7 +2,7 @@ import { createFilter } from './createFilter';
 import { FilterNames } from '../../types/main';
 
 describe('Tests for createFilter', () => {
-    test('should create a filter with correct values', () => {
+    test('Should create a filter with correct values', () => {
         const value: FilterNames = 'All';
         const active: boolean = true;
         const filter = createFilter(value, active);
@@ -12,7 +12,7 @@ describe('Tests for createFilter', () => {
         expect(filter.id).toBeDefined();
     });
 
-    test('should create a filter with default active value', () => {
+    test('Should create a filter with default active value', () => {
         const value: FilterNames = 'Active';
         const filter = createFilter(value);
 

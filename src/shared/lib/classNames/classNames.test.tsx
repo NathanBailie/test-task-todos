@@ -1,36 +1,36 @@
 import { classNames } from './classNames';
 
-describe('Tests for classNames', () => {
-    test('One class only', () => {
+describe('classNames', () => {
+    it('should return base class when only base class is provided', () => {
         const result = 'oneClass';
         expect(classNames('oneClass')).toBe(result);
     });
 
-    test('With true mods', () => {
+    it('should apply true mods', () => {
         const mods = { active: true, hovered: true };
         const result = 'oneClass active hovered';
         expect(classNames('oneClass', mods, [])).toBe(result);
     });
 
-    test('With false mods', () => {
+    it('should ignore false mods', () => {
         const mods = { active: false, hovered: true };
         const result = 'oneClass hovered';
         expect(classNames('oneClass', mods, [])).toBe(result);
     });
 
-    test('With undefined mods', () => {
+    it('should ignore undefined mods', () => {
         const mods = { active: false, hovered: undefined };
         const result = 'oneClass';
         expect(classNames('oneClass', mods, [])).toBe(result);
     });
 
-    test('With additional classes', () => {
+    it('should apply additional classes', () => {
         const addClasses = ['active'];
         const result = 'oneClass active';
         expect(classNames('oneClass', {}, addClasses)).toBe(result);
     });
 
-    test('With all kind of classes and modes', () => {
+    it('should combine base class, true mods, and additional classes', () => {
         const mods = { active: true, hovered: false, linked: undefined };
         const addClasses = ['decorated'];
         const result = 'oneClass active decorated';
