@@ -7,6 +7,12 @@
 	flex-wrap: wrap;
 	padding: 5px 10px;
 	background: var(--app-bg);
+
+	@media (width <= 600px) {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
 }
 
 .clearBtn {

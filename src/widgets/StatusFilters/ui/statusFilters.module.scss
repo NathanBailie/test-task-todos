@@ -4,6 +4,11 @@
 	align-items: center;
 	gap: 10px;
 	flex-wrap: wrap;
+
+	@media(width <=330px) {
+		flex-direction: column;
+		gap: 5px;
+	}
 }
 
 .statusFilter {
